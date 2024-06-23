@@ -33,7 +33,6 @@ params = {
       page: currentPage,
       per_page: 15,
 };
-
 const res = await axios.get(url, {params});
 return res.data
 }
