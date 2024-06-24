@@ -81,10 +81,9 @@ async function onFormSubmit(event) {
       renderGallery(data.hits);
     } catch {
       iziToast.warning({
+        message: 'Sorry, there are no images matching your search query. Please try again!',
         color: 'red',
         position: 'topRight',
-        message:
-          'Sorry, there are no images matching your search query. Please try again!',
       });
     }
   } 
