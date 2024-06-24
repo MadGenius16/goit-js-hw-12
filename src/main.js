@@ -44,17 +44,19 @@ export function closeLoader() {
 }
 
 function checkBtnStatus() {
-  if (currentPage >= maxPage) {
-    iziToast.success({
-      color: 'blue',
-      position: 'topRight',
-      message: "We're sorry, but you've reached the end of search results.",
-    });
-    closeLoadMoreBtn();
-  } else {
-    showLoadMoreBtn();
+    if (currentPage >= maxPage) {
+      closeLoadMoreBtn();
+      if(maxPage) {
+        iziToast.success({
+          color: 'blue',
+          position: 'topRight',
+          message: "We're sorry, but you've reached the end of search results.",
+        });
+      }
+    } else {
+      showLoadMoreBtn();
+    }
   }
-}
 
 function myScroll() {
   const height = refs.gallery.firstChild.getBoundingClientRect().height;

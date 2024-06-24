@@ -4,11 +4,11 @@ import { refs } from '../main';
 export function renderGallery(array) {
   if (array.length === 0) {
     closeLoader();
-    iziToast.warning({
-      message: 'Sorry, there are no images matching your search query. Please try again!',
-      color: 'red',
-      position: 'topRight',
-    });
+    // iziToast.warning({
+    //   message: 'Sorry, there are no images matching your search query. Please try again!',
+    //   color: 'red',
+    //   position: 'topRight',
+    // });
     form.reset();
   } else {
     const showGalleryArr = array
