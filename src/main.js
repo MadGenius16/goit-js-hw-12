@@ -91,7 +91,6 @@ async function onFormSubmit(event) {
   event.target.reset();
   closeLoader();
   checkBtnStatus();
-  
 }
 
 async function onLoadMoreClick() {
