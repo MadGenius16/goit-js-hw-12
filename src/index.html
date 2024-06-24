@@ -16,17 +16,17 @@
         <input
           type="text"
           name="inputname"
+          id="inputid"
           placeholder="Search images..."
         />
-        <button class="button search-btn" type="submit">Search</button>
+        <button class="button" type="submit">Search</button>
       </form>
       <span class="loader visually-hidden"></span>
-      <!-- <div class="loader visually-hidden"></div> -->
       <ul class="gallery"></ul>
-      <button type="button" class="btn js-btn-load visually-hidden" data-action="load-more">
-        <span class="label">Load more</span>
+      <button class="load-more-btn visually-hidden" type="button">
+        Load more
       </button>
     </div>
-    <script src="./main.js" type="module" defer></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>

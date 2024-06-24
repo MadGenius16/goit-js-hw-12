@@ -1,38 +1,19 @@
-// export function getPhotos(query) {
-//   const BASE_URL = 'https://pixabay.com';
-//   const endPoint = '/api/';
-//   const params = new URLSearchParams({
-//     key: '44405455-dc304595c2bd7cb59ead2c04f',
-//     q: query,
-//     image_type: 'photo',
-//     orientation: 'horizontal',
-//     safesearch: true,
-//     page: currentPage,
-//     per_page: 15,
-//   });
-//   const url = `${BASE_URL}${endPoint}?${params}`;
-//   return fetch(url).then(res => {
-//     if (!res.ok) {
-//       throw new Error(res.status);
-//     }
-//     return res.json();
-//   });
-// }
-import axios from "axios";
 
-export async function getPhotos(query, currentPage) {
+import axios from 'axios';
+
+export async function getImages(query, currentPage) {
   const BASE_URL = 'https://pixabay.com';
   const endPoint = '/api/';
   const url = BASE_URL + endPoint;
-params = {
-  key: '44405455-dc304595c2bd7cb59ead2c04f',
-      q: query,
-      image_type: 'photo',
-      orientation: 'horizontal',
-      safesearch: true,
-      page: currentPage,
-      per_page: 15,
-};
-const res = await axios.get(url, {params});
-return res.data
+  const params = {
+    key: '44405455-dc304595c2bd7cb59ead2c04f',
+    q: query,
+    image_type: 'photo',
+    orientation: 'horizontal',
+    safesearch: true,
+    page: currentPage,
+    per_page: 15,
+  };
+  const res = await axios.get(url, {params});
+  return res.data;
 }

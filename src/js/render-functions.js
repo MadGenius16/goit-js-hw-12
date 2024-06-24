@@ -1,16 +1,17 @@
-import { gallery, lightbox, closeLoader } from '../main';
+import { lightbox, closeLoader } from '../main';
+import { refs } from '../main';
 
-export function showGallery(images) {
-  if (images.length===0) {
+export function renderGallery(array) {
+  if (array.length === 0) {
     closeLoader();
-    iziToast.error({
+    iziToast.warning({
       message: 'Sorry, there are no images matching your search query. Please try again!',
       color: 'red',
       position: 'topRight',
     });
     form.reset();
   } else {
-    const markup = images
+    const showGalleryArr = array
       .map(image => {
         return `<li class="gallery-item">
         <a href="${image.largeImageURL}">
@@ -37,7 +38,9 @@ export function showGallery(images) {
       </li>`;
       })
       .join('');
-    gallery.insertAdjacentHTML('beforeend', markup);
+
+    refs.gallery.insertAdjacentHTML('beforeend', showGalleryArr);
+
     lightbox.refresh();
   }
   closeLoader();
