@@ -107,7 +107,7 @@ async function onLoadMoreClick() {
       position: 'topRight',
     });
   }
-  
+
   closeLoader();
   checkBtnStatus();
   myScroll();
