@@ -87,7 +87,7 @@ async function onFormSubmit(event) {
       });
     }
   } 
-  
+
   event.target.reset();
   closeLoader();
   checkBtnStatus();
